@@ -25,12 +25,13 @@ footer .left {
 	max-width: 40ch;
 }
 
-header>div {
+header > div {
 	position: relative;
 }
 
 .popup a {
 	all: unset;
+	cursor: pointer;
 }
 
 .popup {
@@ -196,7 +197,7 @@ figcaption a {
 	grid-template-rows: calc(1.6vw + 1rem * 4) 1fr;
 }
 
-.greetings>img {
+.greetings > img {
 	width: 100%;
 	object-fit: fill;
 	display: flex;
@@ -207,13 +208,13 @@ figcaption a {
 	/* Span across both rows */
 }
 
-.greetings>h2 {
+.greetings > h2 {
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 	/* Occupy the first row in the second column */
 }
 
-.greetings>p {
+.greetings > p {
 	font-weight: 300;
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
@@ -232,10 +233,12 @@ header {
 	max-height: 15%;
 	position: absolute;
 	padding: 2em;
-	background: linear-gradient(to bottom,
-			rgba(255, 255, 255, 1) 0%,
-			rgba(255, 255, 255, 0.5) 70%,
-			rgba(255, 255, 255, 0.1) 100%);
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.5) 70%,
+		rgba(255, 255, 255, 0.1) 100%
+	);
 	backdrop-filter: blur(2px);
 	z-index: 1;
 	isolation: isolate;
@@ -249,7 +252,7 @@ header {
 	height: 100vh;
 }
 
-body p>a {
+body p > a {
 	display: initial;
 	font-weight: bold;
 	background: none !important;
@@ -282,7 +285,7 @@ body p>a {
 
 .hero .three {
 	box-shadow: -36px -38px 0px #f5f5f5c9;
-	bottom: 10%;
+	bottom: 5vmin;
 	left: 10%;
 	color: black;
 	background-color: whitesmoke;
@@ -311,7 +314,7 @@ li {
 	font-size: 1.2rem;
 }
 
-header>div {
+header > div {
 	display: inherit;
 	justify-content: flex-end;
 	align-items: center;
@@ -334,13 +337,13 @@ header>div {
 	background-color: whitesmoke;
 }
 
-figcaption>p {
+figcaption > p {
 	font-size: calc(1.2rem + 0.1vw);
 	width: 40vw;
 	font-weight: 300;
 }
 
-figcaption>h2 {
+figcaption > h2 {
 	font-weight: 500;
 }
 
@@ -393,7 +396,7 @@ figcaption a {
 		translate: none;
 	}
 
-	[aria-label="Religious Education"] figcaption>p {
+	[aria-label="Religious Education"] figcaption > p {
 		width: 100%;
 	}
 
@@ -454,17 +457,17 @@ figcaption a {
 	transition: all 0.3s ease-in-out;
 }
 
-#toggle:checked+.hamburger .bar1 {
+#toggle:checked + .hamburger .bar1 {
 	transform: rotate(-45deg);
 	margin-top: 25px;
 }
 
-#toggle:checked+.hamburger .bar3 {
+#toggle:checked + .hamburger .bar3 {
 	opacity: 0;
 	transform: rotate(45deg);
 }
 
-#toggle:checked+.hamburger .bar2 {
+#toggle:checked + .hamburger .bar2 {
 	transform: rotate(45deg);
 	margin-top: -7px;
 }
@@ -475,7 +478,7 @@ figcaption a {
 }
 
 section[aria-label="Weddings"] h2,
-figcaption>h2 {
+figcaption > h2 {
 	font-size: calc(2.8vw + 1rem);
 }
 
@@ -567,4 +570,11 @@ section[aria-label="Weddings"] a {
 	margin: 2% auto;
 	display: block;
 	width: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+	.hero .one,
+	.hero .three {
+		width: 100%;
+	}
 }
